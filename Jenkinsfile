@@ -13,4 +13,16 @@ pipeline {
             }
         }
     }
+
+    post{
+        always {
+            sh 'echo "This will always run"'
+        }
+        success {
+            sh 'echo "This build is successfull"'
+        }
+        failure {
+            sh 'echo "Fail to build the pipeline"'
+        }
+    }
 }
